@@ -42,10 +42,9 @@ export class AuthService {
 
     async getCurrentUser(){   // after login it will check authentication state
         try {
-            return this.account.get()
+            return await this.account.get()
         } catch (error) {
-            throw error
-            
+            console.log("Appwrite serive :: getCurrentUser :: error", error);            
         }
         return null
     }
